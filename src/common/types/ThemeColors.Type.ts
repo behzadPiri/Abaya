@@ -1,0 +1,18 @@
+export interface ThemeColorsType {
+  backgroundMain: string,
+  backgroundLight: string,
+  backgroundDark: string,
+  textPrimary: string,
+  textSecondary: string,
+  textPlaceholder: string,
+  textMuted: string,
+  textSubtle: string,
+  textDisabled: string,
+  error: string,
+  primary: string,
+  secondary: string,
+  secondaryDark: string,
+  button: string,
+  border: string,
+  rippleAndroid: string,
+}
