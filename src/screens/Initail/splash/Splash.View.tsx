@@ -1,3 +1,4 @@
+import {memo} from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 import styles from './Splash.Styles.tsx';
 import {useThemeColors} from '../../../content/themes/Themes.tsx';
@@ -28,4 +29,4 @@ const Splash = () => {
   );
 };
 
-export default Splash;
+export default memo(Splash);

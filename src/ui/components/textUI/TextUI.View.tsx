@@ -19,7 +19,7 @@ const TextUIView = (textProps: TextUITypes) => {
 
   const fontStyle = {
     fontFamily: bold ? 'Poppins-Bold' : 'Poppins-Regular',
-    color: Colors.android_ripple,
+    color: Colors.textPrimary,
   };
 
   return (

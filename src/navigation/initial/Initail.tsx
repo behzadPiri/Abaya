@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './Initial.Types.ts';
-import {Splash} from '../../screens';
+import {Splash,Onboarding} from '../../screens';
 
 const Initial = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -14,6 +14,7 @@ const Initial = () => {
       }}
       initialRouteName="Splash">
       <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen name="Onboarding" component={Onboarding} />
     </Stack.Navigator>
   );
 };

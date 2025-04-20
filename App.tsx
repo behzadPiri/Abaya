@@ -13,6 +13,7 @@ const App = (): JSX.Element => {
         <StatusBar
           barStyle={theme === 'light' ? 'light-content' : 'dark-content'}
           backgroundColor={'#ffffff'}
+          animated
         />
         <MainNavigation />
         <ToastManager style={{minHeight: 60}} />

@@ -14,7 +14,7 @@ const useSplashViewModal = (): SplashModal => {
           routes: [{name: 'Onboarding'}],
         }),
       );
-    }, 10000);
+    }, 3000);
     return () => clearTimeout(timer);
   },[navigation]);
 
