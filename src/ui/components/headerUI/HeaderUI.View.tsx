@@ -22,6 +22,7 @@ const HeaderUI = (propsHeader:HeaderUIProps) => {
   return (
     <SafeAreaView style={styles.headerContainer}>
 
+      {/* آیکون بازگشت*/}
       <View style={styles.iconWrapper}>
         {!disableIconBack && onPressBack && (
           <Pressable onPress={onPressBack} style={styles.button}>
@@ -30,10 +31,12 @@ const HeaderUI = (propsHeader:HeaderUIProps) => {
         )}
       </View>
 
+      {/*متن هدر*/}
       <View style={styles.titleWrapper}>
         <TextUI text={title} style={styles.title}/>
       </View>
 
+      {/* ایکون سبد خرید و علاقه مندی */}
       <View style={styles.iconWrapper}>
         {!disableIcon_Cart_Fav && onPressFav && (
           <Pressable onPress={onPressFav} style={styles.button}>
