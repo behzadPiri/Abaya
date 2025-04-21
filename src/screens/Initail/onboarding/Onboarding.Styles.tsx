@@ -6,15 +6,8 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'relative',
   },
-  header: {
-    width: width,
+  headerWrapper: {
     position: 'absolute',
-    backgroundColor: 'transparent',
-    height:48 ,
-    zIndex: 10,
-    paddingHorizontal: 24,
-    padding: 2,
-    alignItems: 'flex-end',
   },
   button: {
     width: 48,
@@ -31,7 +24,7 @@ const styles = StyleSheet.create({
   footer: {
     width: width,
     height: '10%',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
@@ -39,7 +32,7 @@ const styles = StyleSheet.create({
   progressWrapper: {
     width: '50%',
     height: '100%',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     alignItems: 'center',
   },
   progress: {

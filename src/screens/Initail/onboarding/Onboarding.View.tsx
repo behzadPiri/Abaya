@@ -1,7 +1,7 @@
 import {memo} from 'react';
 import styles from './Onboarding.Styles';
-import {OnboardingSlide} from '../../../ui';
-import {Images} from '../../../content/axiosConig/images';
+import {HeaderUI, OnboardingSlide} from '../../../ui';
+import {Images} from '../../../content/images/images.tsx';
 import {useThemeColors} from '../../../content/themes/Themes';
 import useOnboardingViewModal from './Onboarding.ViewModal.ts';
 import {Image, Pressable, SafeAreaView, View} from 'react-native';
@@ -19,17 +19,8 @@ const Onboarding = () => {
       style={[styles.container, {backgroundColor: Colors.backgroundMain}]}>
 
       {/* دکمه برگشت */}
-      <View
-        style={[styles.header, {display: currentIndex > 0 ? 'flex' : 'none'}]}>
-        <Pressable
-          disabled={currentIndex <= 0}
-          onPress={() => handleBack(currentIndex - 1)}
-          style={styles.button}>
-          <Image
-            source={Images.iconBack}
-            style={[styles.icon, {tintColor: Colors.textPrimary}]}
-          />
-        </Pressable>
+      <View style={styles.headerWrapper}>
+       <HeaderUI onPressBack={()=>handleBack(currentIndex-1)}/>
       </View>
 
       {/* اسلایدها */}

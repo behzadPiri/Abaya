@@ -1,4 +1,4 @@
-import {Images} from '../../../content/axiosConig/images.tsx';
+import {Images} from '../../../content/images/images.tsx';
 
 export const onboardingSlideData = [
   {
