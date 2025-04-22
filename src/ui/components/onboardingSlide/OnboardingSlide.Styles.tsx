@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 import {Fonts, height, width} from '../../../content/themes/Themes.tsx';
+import {ThemeColorsType} from '../../../common/types/ThemeColors.Type.ts';
 
-const styles = StyleSheet.create({
+const createStyles =(colors:ThemeColorsType)=> StyleSheet.create({
   container: {
     width: width,
     alignItems: 'center',
@@ -23,7 +24,8 @@ const styles = StyleSheet.create({
   subtitle:{
     fontSize: Fonts.regular,
     marginTop: 12,
+    color: colors.textSecondary
   }
 });
 
-export default styles;
+export default createStyles;

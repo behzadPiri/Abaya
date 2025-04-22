@@ -1,22 +1,23 @@
 import {memo} from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import styles from './Splash.Styles.tsx';
-import {useThemeColors} from '../../../content/themes/Themes.tsx';
+import createStyles from './Splash.Styles.tsx';
 import LottieView from 'lottie-react-native';
 import useSplashViewModal from './Splash.ViewModal.ts';
 import {lottieFiles} from '../../../content/lotties/lottieFiles.tsx';
+import {useTheme} from '../../../content/themes/ThemeProvider.tsx';
 
 const Splash = () => {
   const {} = useSplashViewModal();
-  const Colors = useThemeColors();
+  const {colors} = useTheme();
+  const styles=createStyles(colors)
 
   return (
     <SafeAreaView
-      style={[styles.container, {backgroundColor: Colors.backgroundBlack}]}>
+      style={styles.container}>
       <StatusBar
         animated
         barStyle={'light-content'}
-        backgroundColor={Colors.backgroundBlack}
+        backgroundColor={colors.backgroundBlack}
       />
       <LottieView
         loop

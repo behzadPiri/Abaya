@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 import {Fonts, width} from '../../../content/themes/Themes.tsx';
+import {ThemeColorsType} from '../../../common/types/ThemeColors.Type.ts';
 
-const styles = StyleSheet.create({
+const createStyles=(colors:ThemeColorsType) => StyleSheet.create({
   headerContainer: {
     width: width,
     backgroundColor: 'transparent',
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28,
     resizeMode: 'contain',
+    tintColor: colors.textPrimary
   },
   titleWrapper: {
     height: '100%',
@@ -40,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default styles;
+export default createStyles;

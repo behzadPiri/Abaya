@@ -1,8 +1,8 @@
 import {memo} from 'react';
 import {Text} from 'react-native';
-import styles from './TextUI.Styles.tsx';
+import createStyles from './TextUI.Styles.tsx';
 import {TextUITypes} from './TextUI.Types.ts';
-import {useThemeColors} from '../../../content/themes/Themes.tsx';
+import {useTheme} from '../../../content/themes/ThemeProvider.tsx';
 
 const TextUIView = (textProps: TextUITypes) => {
   const {
@@ -14,17 +14,12 @@ const TextUIView = (textProps: TextUITypes) => {
     ...props
   } = textProps;
 
-  const Colors = useThemeColors();
-
-
-  const fontStyle = {
-    fontFamily: bold ? 'Poppins-Bold' : 'Poppins-Regular',
-    color: Colors.textPrimary,
-  };
+  const {colors}=useTheme()
+  const styles = createStyles(colors,bold)
 
   return (
     <Text
-      style={[styles.container, fontStyle, style]}
+      style={[styles.container, style]}
       numberOfLines={numberOfLines}
       adjustsFontSizeToFit={adjustsFontSizeToFit}
       {...props}>

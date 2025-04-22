@@ -4,7 +4,7 @@ import {ThemeColorsType} from '../../common/types/ThemeColors.Type.ts';
 
 export const {width, height} = Dimensions.get('window');
 
-const Colors: {[key: string]: ThemeColorsType} = {
+export const Colors: {[key: string]: ThemeColorsType} = {
   dark: {
     backgroundMain: '#ffffff',
     backgroundLight: '#F2F2F2',
@@ -45,6 +45,12 @@ const Colors: {[key: string]: ThemeColorsType} = {
     border: '#DADADA',
     rippleAndroid: 'rgba(0,0,0,.2)',
   },
+};
+
+// 🔵 گرفتن تم سیستم (تاریک یا روشن)
+export const getSystemTheme = (): 'light' | 'dark' => {
+  const scheme = Appearance.getColorScheme();
+  return scheme === 'dark' ? 'dark' : 'light';
 };
 
 // هوک `useThemeColors` برای تعیین رنگ‌های تم (سایه روشن یا تاریک) بر اساس تنظیمات سیستم کاربر استفاده می‌شود.
