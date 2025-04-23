@@ -3,7 +3,9 @@ import {UseFormTrigger} from 'react-hook-form';
 
 export interface InputUIModal {
   isFocused: boolean;
+  secret: boolean;
   handleFocus: () => void;
+  handleSecret: () => void;
   handleBlur: (value: string) => void;
   handleInputChange: (
     text: string,

@@ -9,13 +9,14 @@ import {
 
 export interface InputUIProps {
   hint: string;
-  editable?: boolean;
-  ref?: RefObject<TextInput>;
-  keyboardType?: KeyboardTypeOptions;
   name: string;
+  editable?: boolean;
   control: Control<any>;
   defaultValue?: string;
-  containerStyle?: StyleProp<ViewStyle>;
+  secretPassword?: boolean;
+  ref?: RefObject<TextInput>;
   rulesValid?: RegisterOptions;
   trigger: UseFormTrigger<any>;
+  keyboardType?: KeyboardTypeOptions;
+  containerStyle?: StyleProp<ViewStyle>;
 }

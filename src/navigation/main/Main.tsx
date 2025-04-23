@@ -9,7 +9,7 @@ const Main = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="InitialNavigation">
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="AuthenticationNavigation">
         <Stack.Screen name="InitialNavigation" component={InitialNavigation} />
         <Stack.Screen name="AuthenticationNavigation" component={AuthenticationNavigation} />
       </Stack.Navigator>

@@ -1,10 +1,11 @@
 import {FC, memo} from 'react';
-import {Animated, TextInput, View} from 'react-native';
+import {Animated, Image, Pressable, TextInput, View} from 'react-native';
 import createStyles from './InputUI.Styles.tsx';
 import {Controller} from 'react-hook-form';
 import {useTheme} from '../../../content/themes/ThemeProvider.tsx';
 import {InputUIProps} from './InputUI.Types.ts';
 import useInputViewModal from './InputUI.ViewModal.ts';
+import {Images} from '../../../content/images/images.tsx';
 
 const InputUI: FC<InputUIProps> = props => {
   const {
@@ -17,39 +18,40 @@ const InputUI: FC<InputUIProps> = props => {
     editable = true,
     containerStyle,
     defaultValue = '',
+    secretPassword = true,
     keyboardType = 'default',
   } = props;
 
   const {
     scale,
+    secret,
     isFocused,
+    padding_H,
     translateY,
     handleBlur,
-    padding_H,
     translateX,
     handleFocus,
+    handleSecret,
     handleInputChange,
   } = useInputViewModal();
 
   const {colors} = useTheme();
   const styles = createStyles({
+    scale,
     colors,
     editable,
-    translateY,
-    scale,
     padding_H,
     translateX,
+    translateY,
+    secretPassword,
   });
 
   return (
     <View style={[styles.container, containerStyle]}>
-
       {/* انیمیشن placeholder*/}
       <View style={styles.hintWrapper}>
         <Animated.View style={styles.hintContainer}>
-          <Animated.Text style={[styles.hint]}>
-            {hint}
-          </Animated.Text>
+          <Animated.Text style={[styles.hint]}>{hint}</Animated.Text>
         </Animated.View>
       </View>
 
@@ -60,21 +62,32 @@ const InputUI: FC<InputUIProps> = props => {
         defaultValue={defaultValue}
         rules={rulesValid}
         render={({field}) => (
-          <TextInput
-            ref={ref}
-            textAlign="left"
-            editable={editable}
-            value={field.value}
-            onFocus={handleFocus}
-            focusable={isFocused}
-            keyboardType={keyboardType}
-            style={styles.inputWrapper}
-            cursorColor={colors.textPrimary}
-            onBlur={() => handleBlur(field.value)}
-            onChangeText={text =>
-              handleInputChange(text, field.onChange, name, trigger)
-            }
-          />
+          <View style={styles.inputWrapper}>
+            <TextInput
+              ref={ref}
+              textAlign="left"
+              editable={editable}
+              value={field.value}
+              onFocus={handleFocus}
+              focusable={isFocused}
+              keyboardType={keyboardType}
+              style={styles.input}
+              secureTextEntry={secret}
+              cursorColor={colors.textPrimary}
+              onBlur={() => handleBlur(field.value)}
+              onChangeText={text =>
+                handleInputChange(text, field.onChange, name, trigger)
+              }
+            />
+            {secretPassword && (
+              <Pressable onPress={handleSecret} style={styles.eyeButton}>
+                <Image
+                  source={secret ? Images.iconShow : Images.iconHide}
+                  style={styles.iconEye}
+                />
+              </Pressable>
+            )}
+          </View>
         )}
       />
     </View>

@@ -5,6 +5,7 @@ import {Fonts} from '../../../content/themes/Themes.tsx';
 type TCreateStyles = {
   colors: ThemeColorsType;
   editable?: boolean;
+  secretPassword?: boolean;
   translateY: Animated.AnimatedInterpolation<string | number>;
   translateX: Animated.AnimatedInterpolation<string | number>;
   scale: Animated.AnimatedInterpolation<string | number>;
@@ -17,6 +18,7 @@ const createStyles = ({
   padding_H,
   translateX,
   translateY,
+  secretPassword,
   editable,
 }: TCreateStyles) =>
   StyleSheet.create({
@@ -34,12 +36,17 @@ const createStyles = ({
       opacity: editable ? 0.7 : 1,
     },
     inputWrapper: {
+      flexDirection: 'row',
+      backgroundColor: colors.backgroundMain,
+    },
+    input: {
       height: 50,
       zIndex: 10,
-      backgroundColor: 'transparent',
+      width:secretPassword? '90%':"100%",
       paddingVertical: 0,
-      fontFamily: 'Poppins-Regular',
       fontSize: Fonts.medium,
+      fontFamily: 'Poppins-Regular',
+      backgroundColor: 'transparent',
       color: editable ? colors.textPrimary : colors.textDisabled,
     },
     hint: {
@@ -47,12 +54,14 @@ const createStyles = ({
       color: editable ? colors.textDisabled : colors.textPlaceholder,
       backgroundColor: colors.backgroundMain,
       paddingHorizontal: 4,
+      zIndex: 5,
       transform: [{scale}],
     },
     hintContainer: {
       transform: [{translateY}, {translateX}],
       paddingHorizontal: padding_H,
       minWidth: 24,
+      zIndex: 4,
     },
     hintWrapper: {
       height: 52,
@@ -60,6 +69,18 @@ const createStyles = ({
       position: 'absolute',
       backgroundColor: 'transparent',
     },
+    eyeButton:{
+      backgroundColor: colors.backgroundMain,
+      width: '10%',
+      height: 50,
+      alignItems:"center",
+      justifyContent:"center"
+    },
+    iconEye:{
+      width:24,
+      height:24,
+      resizeMode:"contain"
+    }
   });
 
 export default createStyles;

@@ -5,8 +5,9 @@ import {UseFormTrigger} from 'react-hook-form';
 import {debounceValidation} from '../../../common/utils/debounceValidation/debounceValidation.tsx';
 
 const useInputViewModal = (): InputUIModal => {
-  //   input مدیریت وضعیت فوکوس
+
   const [isFocused, setIsFocused] = useState(false);
+  const [secret, setSecret] = useState(true);
 
   // تعریف مقدار اولیه انیمیشن با useRef
   const animation = useRef(new Animated.Value(0)).current;
@@ -46,6 +47,11 @@ const useInputViewModal = (): InputUIModal => {
     }
   };
 
+  // هندلر نمایش پسورد
+  const handleSecret = () => {
+    setSecret(!secret);
+  };
+
   // تنظیم انیمیشن‌ها
   const interpolate = (outputRange: [string | number, number | any]) =>
     animation.interpolate({
@@ -60,12 +66,14 @@ const useInputViewModal = (): InputUIModal => {
 
   return {
     scale,
+    secret,
     isFocused,
+    padding_H,
     translateY,
     handleBlur,
-    padding_H,
     translateX,
     handleFocus,
+    handleSecret,
     handleInputChange,
   };
 };
