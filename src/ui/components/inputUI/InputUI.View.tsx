@@ -18,7 +18,7 @@ const InputUI: FC<InputUIProps> = props => {
     editable = true,
     containerStyle,
     defaultValue = '',
-    secretPassword = true,
+    secretPassword = false,
     keyboardType = 'default',
   } = props;
 
