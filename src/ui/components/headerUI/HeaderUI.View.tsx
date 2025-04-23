@@ -12,14 +12,15 @@ const HeaderUI = (propsHeader: HeaderUIProps) => {
     onPressFav,
     onPressCart,
     onPressBack,
+    shadow=false,
     disableIconBack = false,
     disableIcon_Cart_Fav = true,
   } = propsHeader;
 
   const {colors} = useTheme();
-  const styles = createStyles(colors);
+  const styles = createStyles(colors,shadow);
   return (
-    <SafeAreaView style={styles.headerContainer}>
+    <SafeAreaView style={[styles.headerContainer,shadow&&styles.shadowHeader]}>
       {/* آیکون بازگشت*/}
       <View style={styles.iconWrapper}>
         {!disableIconBack && onPressBack && (

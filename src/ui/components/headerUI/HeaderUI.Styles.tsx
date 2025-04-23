@@ -2,16 +2,17 @@ import {StyleSheet} from 'react-native';
 import {Fonts, width} from '../../../content/themes/Themes.tsx';
 import {ThemeColorsType} from '../../../common/types/ThemeColors.Type.ts';
 
-const createStyles=(colors:ThemeColorsType) => StyleSheet.create({
+const createStyles=(colors:ThemeColorsType,shadow?:boolean) => StyleSheet.create({
   headerContainer: {
     width: width,
-    backgroundColor: 'transparent',
+    backgroundColor:shadow? colors.backgroundMain:"transparent",
     height: 52,
     zIndex: 10,
     paddingHorizontal: 24,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom:12
   },
   button: {
     width: 48,
@@ -40,6 +41,13 @@ const createStyles=(colors:ThemeColorsType) => StyleSheet.create({
   title: {
     fontSize:Fonts.regular
   },
+  shadowHeader:{
+    shadowColor: colors.backgroundBlack,
+    shadowOffset: {width: 0, height: 2,},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  }
 });
 
 export default createStyles;
