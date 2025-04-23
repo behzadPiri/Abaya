@@ -5,12 +5,12 @@ import {ButtonUIProps} from './ButtonUI.Types';
 import LottieView from 'lottie-react-native';
 import {useTheme} from '../../../content/themes/ThemeProvider.tsx';
 import {lottieFiles} from '../../../content/lotties/lottieFiles.tsx';
-// import lottieFiles from '../../../content/lottieFiles/lottieFiles.tsx';
 
 const ButtonUI = (props: ButtonUIProps) => {
 
   const {
     title,
+    style,
     onPressButton,
     loading = false,
     disabled = false,
@@ -33,7 +33,7 @@ const ButtonUI = (props: ButtonUIProps) => {
         android_ripple={{color: colors.rippleAndroid, foreground: true}}
         disabled={disabled}
         onPress={onPressButton}
-        style={styles.container}
+        style={[styles.container,style]}
         pointerEvents="box-only">
         {loading ? (
           <LottieView

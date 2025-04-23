@@ -45,7 +45,7 @@ const InputUI: FC<InputUIProps> = props => {
     translateY,
     secretPassword,
   });
-
+  console.log("secret",secret);
   return (
     <View style={[styles.container, containerStyle]}>
       {/* انیمیشن placeholder*/}
@@ -72,6 +72,7 @@ const InputUI: FC<InputUIProps> = props => {
               focusable={isFocused}
               keyboardType={keyboardType}
               style={styles.input}
+              selectionColor={colors.primary}
               secureTextEntry={secret}
               cursorColor={colors.textPrimary}
               onBlur={() => handleBlur(field.value)}
