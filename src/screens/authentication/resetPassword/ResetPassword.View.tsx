@@ -26,7 +26,7 @@ const ResetPassword = () => {
   return (
     <SafeAreaView style={styles.container}>
 
-      <HeaderUI shadow title={'Forgot Password'} onPressBack={handleNavigationBack} />
+      <HeaderUI shadow title={'Reset your password'} onPressBack={handleNavigationBack} />
 
       <ScrollView
         contentContainerStyle={styles.scrollWrapper}

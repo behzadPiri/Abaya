@@ -1,16 +1,15 @@
 import {ResetPasswordModal} from './ResetPassword.Modal.ts';
 import {useNavigation} from '@react-navigation/native';
-import {ForgotPasswordScreenNavigationProp} from '../../../navigation/authentication/Authentication.Types.ts';
+import {ResetPasswordScreenNavigationProp} from '../../../navigation/authentication/Authentication.Types.ts';
 import {useEffect} from 'react';
 import {BackHandler} from 'react-native';
 
 const useResetPasswordViewModal = (): ResetPasswordModal => {
-  const navigation = useNavigation<ForgotPasswordScreenNavigationProp>();
+  const navigation = useNavigation<ResetPasswordScreenNavigationProp>();
 
   const handleNavigationBack = () => {
     navigation.goBack();
   };
-
 
   //  افزودن گوش دادن به فشردن دکمه بازگشت سخت افزاری موبایل
   useEffect(() => {
@@ -19,11 +18,12 @@ const useResetPasswordViewModal = (): ResetPasswordModal => {
       return true;
     };
 
-    const backHandler = BackHandler.addEventListener("hardwareBackPress", backAction);
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
     return () => backHandler.remove();
   }, []);
-
-
 
   return {
     handleNavigationBack,

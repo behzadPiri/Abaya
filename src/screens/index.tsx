@@ -6,4 +6,5 @@ export {default as Onboarding} from './Initail/onboarding/Onboarding.View';
 export {default as Login} from "./authentication/login/Login.View";
 export {default as Register} from "./authentication/register/Register.View";
 export {default as ForgotPassword} from "./authentication/forgotPassword/ForgotPassword.View";
+export {default as Otp} from "./authentication/otp/Otp.View";
 export {default as ResetPassword} from "./authentication/resetPassword/ResetPassword.View";

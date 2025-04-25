@@ -45,7 +45,8 @@ const InputUI: FC<InputUIProps> = props => {
     translateY,
     secretPassword,
   });
-  console.log("secret",secret);
+
+
   return (
     <View style={[styles.container, containerStyle]}>
       {/* انیمیشن placeholder*/}

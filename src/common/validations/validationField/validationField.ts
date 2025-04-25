@@ -18,6 +18,17 @@ export const validations = {
     },
   },
 
+  otp: {
+    required: {
+      value: true,
+      message: 'Please enter the verification code.',
+    },
+    pattern: {
+      value: /^\d{6}$/,
+      message: 'The code must be exactly 6 digits.',
+    },
+  },
+
   fullName: {
     required: {value: true, message: 'Full name is required.'},
     minLength: {
