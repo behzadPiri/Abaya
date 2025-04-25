@@ -1,3 +1,5 @@
+import {ResetPasswordTypes} from '../../types/ResetPasswordTypes.ts';
+
 export const validations = {
   email: {
     required: {value: true, message: 'Email is required.'},
@@ -32,3 +34,12 @@ export const validations = {
     },
   },
 };
+
+// این ورژن درست با استفاده از getValues('password')
+export const confirmPasswordValidation = (
+  getValues: (name: keyof ResetPasswordTypes) => string,
+) => ({
+  required: { value: true, message: 'Please confirm your password.' },
+  validate: (value: string) =>
+    value === getValues('newPassword') || 'Passwords do not match.',
+});
