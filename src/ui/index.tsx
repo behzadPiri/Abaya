@@ -6,4 +6,7 @@ export {default as InputUI} from "./components/inputUI/InputUI.View";
 export {default as SocialAuthOptions} from "./components/socialAuthOptions/SocialAuthOptions.View";
 export {default as OnboardingSlide} from "./components/onboardingSlide/OnboardingSlide.View";
 export {default as ShowTimer} from "./components/showTimer/ShowTimer.View";
+export {default as TabIconButton} from "./components/tabIconButton/TabIconButton.View";
+export {default as SectionButton} from "./components/sectionButton/SectionButton.View";
+export {default as HeaderAccount} from "./components/headerAccount/HeaderAccount.View";
 
