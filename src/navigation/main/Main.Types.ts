@@ -4,6 +4,7 @@ import { NavigatorScreenParams } from '@react-navigation/native';
 // برای AccountNavigator
 export type AccountNavigatorParamList = {
   Profile: undefined;
+  Vouchers: undefined;
 };
 
 export type RootStackParamList = {

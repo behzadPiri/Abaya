@@ -18,3 +18,4 @@ export {default as Account} from "./bottomTabs/account/Account.View";
 
 //AccountScreen
 export {default as Profile} from "./accountScreen/profile/Profile.View";
+export {default as Vouchers} from "./accountScreen/vouchers/Vouchers.View";

@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './AccountNavigator.Types.ts';
-import {Profile} from '../../screens';
+import {Profile,Vouchers} from '../../screens';
 
 const AccountNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -14,7 +14,7 @@ const AccountNavigator = () => {
       }}
       initialRouteName="Profile">
       <Stack.Screen name="Profile" component={Profile} />
-
+      <Stack.Screen name="Vouchers" component={Vouchers} />
     </Stack.Navigator>
   );
 };

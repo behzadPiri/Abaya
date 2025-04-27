@@ -26,7 +26,7 @@ export const AccountData = [
   {
     title: 'Vouchers',
     icon: Images.iconTicket,
-    onPress: () => {},
+    onPress: () => navigation.navigate('AccountNavigator',{screen:"Vouchers"}),
     endItem: false,
   },
   {
