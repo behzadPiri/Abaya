@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Fonts, width} from '../../../content/themes/Themes.tsx';
+import {Fonts} from '../../../content/themes/Themes.tsx';
 import {ThemeColorsType} from '../../../common/types/ThemeColors.Type.ts';
 
 const createStyles=(colors:ThemeColorsType) => StyleSheet.create({

@@ -25,6 +25,7 @@ const Login = () => {
       <ScrollView
         contentContainerStyle={styles.scrollWrapper}
         showsVerticalScrollIndicator={false}>
+
         {/*تیتر */}
         <TextUI bold text="Lets Sign you in" style={styles.title} />
         <TextUI

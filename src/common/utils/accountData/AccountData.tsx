@@ -1,10 +1,14 @@
 import {Images} from '../../../content/images/images.tsx';
+import {useNavigation} from '@react-navigation/native';
+import {AccountNavigationProp} from '../../../navigation/main/Main.Types.ts';
+
+const navigation=useNavigation<AccountNavigationProp>()
 
 export const AccountData = [
   {
     title: 'Profile',
     icon: Images.user_outline,
-    onPress: () => {},
+    onPress: () => navigation.navigate('AccountNavigator',{screen:"Profile"}),
     endItem: false,
   },
   {

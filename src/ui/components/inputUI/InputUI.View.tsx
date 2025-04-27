@@ -74,7 +74,7 @@ const InputUI: FC<InputUIProps> = props => {
               keyboardType={keyboardType}
               style={styles.input}
               selectionColor={colors.primary}
-              secureTextEntry={secret}
+              secureTextEntry={secret&&secretPassword}
               cursorColor={colors.textPrimary}
               onBlur={() => handleBlur(field.value)}
               onChangeText={text =>

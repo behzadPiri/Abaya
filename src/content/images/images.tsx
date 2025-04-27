@@ -26,4 +26,5 @@ export const Images={
   iconUser_add:require('../../assets/images/user_add/User_add_light.png'),
   iconLock:require('../../assets/images/lock/Lock_light.png'),
   iconOrder:require('../../assets/images/order/Desk_alt_light.png'),
+  iconEdit:require('../../assets/images/edit/Edit_light.png'),
 }
