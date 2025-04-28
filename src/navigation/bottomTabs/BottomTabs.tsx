@@ -4,12 +4,13 @@ import {TabIconButton} from '../../ui';
 import createStyles from './BottomTabs.Styles.tsx';
 import {Images} from '../../content/images/images.tsx';
 import {RootStackParamList} from './BottomTabs.Types.ts';
-import {Cart, Categories, Home, Account} from '../../screens';
+import {Account, Cart, Categories, Home} from '../../screens';
 import {useTheme} from '../../content/themes/ThemeProvider.tsx';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+const Tabs = createBottomTabNavigator<RootStackParamList>();
+
 const BottomTabs: FC = () => {
-  const Tabs = createBottomTabNavigator<RootStackParamList>();
   const {colors} = useTheme();
   const styles = createStyles(colors);
 
@@ -20,7 +21,7 @@ const BottomTabs: FC = () => {
       backBehavior="initialRoute"
       screenOptions={{
         lazy: true,
-        animation:"shift",
+        animation: 'shift',
         headerShown: false,
         sceneStyle: styles.screens,
         tabBarHideOnKeyboard: true,
@@ -28,7 +29,6 @@ const BottomTabs: FC = () => {
         tabBarLabelStyle: styles.label,
         tabBarIconStyle: styles.tabIcon,
       }}>
-
       {/*HOME*/}
       <Tabs.Screen
         name="Home"

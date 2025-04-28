@@ -1,10 +1,10 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './Initial.Types.ts';
-import {Splash,Onboarding} from '../../screens';
+import {Onboarding, Splash} from '../../screens';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Initial = () => {
-  const Stack = createNativeStackNavigator<RootStackParamList>();
-
   return (
     <Stack.Navigator
       screenOptions={{

@@ -8,9 +8,9 @@ import {
   InitialNavigation,
 } from '../index.tsx';
 
-const Main = () => {
-  const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
+const Main = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator

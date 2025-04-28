@@ -1,10 +1,10 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './AccountNavigator.Types.ts';
-import {Profile,Vouchers} from '../../screens';
+import {Profile, Vouchers} from '../../screens';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AccountNavigator = () => {
-  const Stack = createNativeStackNavigator<RootStackParamList>();
-
   return (
     <Stack.Navigator
       screenOptions={{

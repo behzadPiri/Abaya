@@ -1,10 +1,16 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './Authentication.Types.ts';
-import {Login,Register,ForgotPassword,ResetPassword,Otp} from '../../screens';
+import {
+  ForgotPassword,
+  Login,
+  Otp,
+  Register,
+  ResetPassword,
+} from '../../screens';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Authentication = () => {
-  const Stack = createNativeStackNavigator<RootStackParamList>();
-
   return (
     <Stack.Navigator
       screenOptions={{
