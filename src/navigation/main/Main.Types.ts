@@ -5,6 +5,7 @@ import { NavigatorScreenParams } from '@react-navigation/native';
 export type AccountNavigatorParamList = {
   Profile: undefined;
   Vouchers: undefined;
+  MyOrders: undefined;
 };
 
 export type RootStackParamList = {

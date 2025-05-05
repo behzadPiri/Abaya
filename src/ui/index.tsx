@@ -10,4 +10,8 @@ export {default as TabIconButton} from "./components/tabIconButton/TabIconButton
 export {default as SectionButton} from "./components/sectionButton/SectionButton.View";
 export {default as HeaderAccount} from "./components/headerAccount/HeaderAccount.View";
 export {default as Voucher} from "./components/voucher/Voucher.View";
+export {default as OrderTabBar} from "./components/orderTabBar/OrderTabBar.View";
+export {default as ContainerMyOrders} from "./components/containerMyOrders/ContainerMyOrders.View";
 
+//carts
+export {default as OrderCart} from "./carts/orderCart/OrderCart.View";

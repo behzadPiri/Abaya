@@ -1,5 +1,12 @@
 import {memo} from 'react';
-import {Image, ImageBackground, Pressable, SafeAreaView, ScrollView, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  View,
+} from 'react-native';
 import createStyles from './Profile.Styles.tsx';
 import {useTheme} from '../../../content/themes/ThemeProvider.tsx';
 import {ButtonUI, HeaderUI, TextUI} from '../../../ui';
@@ -12,7 +19,6 @@ import {validations} from '../../../common/validations/validationField/validatio
 import {ProfileTypes} from '../../../common/types/ProfileTypes.ts';
 
 const Profile = () => {
-
   const {handleBack} = useProfileViewModal();
 
   const {colors} = useTheme();
@@ -20,13 +26,13 @@ const Profile = () => {
 
   const {
     control,
+    trigger,
     handleSubmit,
     formState: {errors, isValid},
-    trigger,
   } = useForm<ProfileTypes>();
 
-  const onSubmit =(data: ProfileTypes) => {
-    console.log("data", data);
+  const onSubmit = (data: ProfileTypes) => {
+    console.log('data', data);
   };
 
   return (
@@ -36,7 +42,6 @@ const Profile = () => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollWrapper}>
-
         {/*ImageUser*/}
         <View style={styles.imageWrapper}>
           <ImageBackground style={styles.image} source={Images.user_outline}>
@@ -116,8 +121,6 @@ const Profile = () => {
           style={styles.buttonWrapper}
           onPressButton={handleSubmit(onSubmit)}
         />
-
-
       </ScrollView>
     </SafeAreaView>
   );

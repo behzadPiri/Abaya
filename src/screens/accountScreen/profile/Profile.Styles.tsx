@@ -20,7 +20,7 @@ const createStyles = (colors: ThemeColorsType) =>
       alignItems: 'center',
       justifyContent: 'center',
       height:width/3,
-      backgroundColor: 'green',
+      backgroundColor: colors.backgroundMain,
       paddingVertical:8,
       marginBottom:24
     },

@@ -20,7 +20,7 @@ export const AccountData = [
   {
     title: 'My Orders',
     icon: Images.iconOrder,
-    onPress: () => {},
+    onPress: () => navigation.navigate('AccountNavigator', {screen: 'MyOrders'}),
     endItem: false,
   },
   {
